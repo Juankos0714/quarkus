@@ -1,0 +1,3 @@
+com\example\model\Usuario.class
+com\example\service\UsuarioService.class
+com\example\repository\UsuarioRepository.class
