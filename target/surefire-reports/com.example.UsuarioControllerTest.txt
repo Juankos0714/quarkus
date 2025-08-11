@@ -1,0 +1,121 @@
+-------------------------------------------------------------------------------
+Test set: com.example.UsuarioControllerTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 1, Skipped: 2, Time elapsed: 18.256 s <<< FAILURE! - in com.example.UsuarioControllerTest
+com.example.UsuarioControllerTest.testCrearUsuario  Time elapsed: 0.032 s  <<< ERROR!
+java.lang.RuntimeException: 
+java.lang.RuntimeException: io.quarkus.builder.BuildException: Build failure: Build failed due to errors
+	[error]: Build step io.quarkus.arc.deployment.ArcProcessor#validate threw an exception: jakarta.enterprise.inject.spi.DeploymentException: jakarta.enterprise.inject.UnsatisfiedResolutionException: Unsatisfied dependency for type com.mongodb.reactivestreams.client.MongoClient and qualifiers [@Default]
+	- java member: com.example.health.MongoHealthCheck#mongoClient
+	- declared on CLASS bean [types=[com.example.health.MongoHealthCheck, org.eclipse.microprofile.health.HealthCheck, java.lang.Object], qualifiers=[@Any, @Readiness], target=com.example.health.MongoHealthCheck]
+	at io.quarkus.arc.processor.BeanDeployment.processErrors(BeanDeployment.java:1453)
+	at io.quarkus.arc.processor.BeanDeployment.init(BeanDeployment.java:311)
+	at io.quarkus.arc.processor.BeanProcessor.initialize(BeanProcessor.java:160)
+	at io.quarkus.arc.deployment.ArcProcessor.validate(ArcProcessor.java:472)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at io.quarkus.deployment.ExtensionLoader$3.execute(ExtensionLoader.java:849)
+	at io.quarkus.builder.BuildContext.run(BuildContext.java:256)
+	at org.jboss.threads.ContextHandler$1.runWith(ContextHandler.java:18)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:501)
+Caused by: jakarta.enterprise.inject.UnsatisfiedResolutionException: Unsatisfied dependency for type com.mongodb.reactivestreams.client.MongoClient and qualifiers [@Default]
+	- java member: com.example.health.MongoHealthCheck#mongoClient
+	- declared on CLASS bean [types=[com.example.health.MongoHealthCheck, org.eclipse.microprofile.health.HealthCheck, java.lang.Object], qualifiers=[@Any, @Readiness], target=com.example.health.MongoHealthCheck]
+	at io.quarkus.arc.processor.Beans.resolveInjectionPoint(Beans.java:478)
+	at io.quarkus.arc.processor.BeanInfo.init(BeanInfo.java:624)
+	at io.quarkus.arc.processor.BeanDeployment.init(BeanDeployment.java:299)
+	... 11 more
+
+	at io.quarkus.test.junit.QuarkusTestExtension.throwBootFailureException(QuarkusTestExtension.java:638)
+	at io.quarkus.test.junit.QuarkusTestExtension.interceptTestClassConstructor(QuarkusTestExtension.java:722)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+Caused by: java.lang.RuntimeException: io.quarkus.builder.BuildException: Build failure: Build failed due to errors
+	[error]: Build step io.quarkus.arc.deployment.ArcProcessor#validate threw an exception: jakarta.enterprise.inject.spi.DeploymentException: jakarta.enterprise.inject.UnsatisfiedResolutionException: Unsatisfied dependency for type com.mongodb.reactivestreams.client.MongoClient and qualifiers [@Default]
+	- java member: com.example.health.MongoHealthCheck#mongoClient
+	- declared on CLASS bean [types=[com.example.health.MongoHealthCheck, org.eclipse.microprofile.health.HealthCheck, java.lang.Object], qualifiers=[@Any, @Readiness], target=com.example.health.MongoHealthCheck]
+	at io.quarkus.arc.processor.BeanDeployment.processErrors(BeanDeployment.java:1453)
+	at io.quarkus.arc.processor.BeanDeployment.init(BeanDeployment.java:311)
+	at io.quarkus.arc.processor.BeanProcessor.initialize(BeanProcessor.java:160)
+	at io.quarkus.arc.deployment.ArcProcessor.validate(ArcProcessor.java:472)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at io.quarkus.deployment.ExtensionLoader$3.execute(ExtensionLoader.java:849)
+	at io.quarkus.builder.BuildContext.run(BuildContext.java:256)
+	at org.jboss.threads.ContextHandler$1.runWith(ContextHandler.java:18)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:501)
+Caused by: jakarta.enterprise.inject.UnsatisfiedResolutionException: Unsatisfied dependency for type com.mongodb.reactivestreams.client.MongoClient and qualifiers [@Default]
+	- java member: com.example.health.MongoHealthCheck#mongoClient
+	- declared on CLASS bean [types=[com.example.health.MongoHealthCheck, org.eclipse.microprofile.health.HealthCheck, java.lang.Object], qualifiers=[@Any, @Readiness], target=com.example.health.MongoHealthCheck]
+	at io.quarkus.arc.processor.Beans.resolveInjectionPoint(Beans.java:478)
+	at io.quarkus.arc.processor.BeanInfo.init(BeanInfo.java:624)
+	at io.quarkus.arc.processor.BeanDeployment.init(BeanDeployment.java:299)
+	... 11 more
+
+	at io.quarkus.runner.bootstrap.AugmentActionImpl.runAugment(AugmentActionImpl.java:334)
+	at io.quarkus.runner.bootstrap.AugmentActionImpl.createInitialRuntimeApplication(AugmentActionImpl.java:251)
+	at io.quarkus.runner.bootstrap.AugmentActionImpl.createInitialRuntimeApplication(AugmentActionImpl.java:60)
+	at io.quarkus.test.junit.QuarkusTestExtension.doJavaStart(QuarkusTestExtension.java:224)
+	at io.quarkus.test.junit.QuarkusTestExtension.ensureStarted(QuarkusTestExtension.java:605)
+	at io.quarkus.test.junit.QuarkusTestExtension.beforeAll(QuarkusTestExtension.java:655)
+	... 1 more
+Caused by: io.quarkus.builder.BuildException: Build failure: Build failed due to errors
+	[error]: Build step io.quarkus.arc.deployment.ArcProcessor#validate threw an exception: jakarta.enterprise.inject.spi.DeploymentException: jakarta.enterprise.inject.UnsatisfiedResolutionException: Unsatisfied dependency for type com.mongodb.reactivestreams.client.MongoClient and qualifiers [@Default]
+	- java member: com.example.health.MongoHealthCheck#mongoClient
+	- declared on CLASS bean [types=[com.example.health.MongoHealthCheck, org.eclipse.microprofile.health.HealthCheck, java.lang.Object], qualifiers=[@Any, @Readiness], target=com.example.health.MongoHealthCheck]
+	at io.quarkus.arc.processor.BeanDeployment.processErrors(BeanDeployment.java:1453)
+	at io.quarkus.arc.processor.BeanDeployment.init(BeanDeployment.java:311)
+	at io.quarkus.arc.processor.BeanProcessor.initialize(BeanProcessor.java:160)
+	at io.quarkus.arc.deployment.ArcProcessor.validate(ArcProcessor.java:472)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at io.quarkus.deployment.ExtensionLoader$3.execute(ExtensionLoader.java:849)
+	at io.quarkus.builder.BuildContext.run(BuildContext.java:256)
+	at org.jboss.threads.ContextHandler$1.runWith(ContextHandler.java:18)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:501)
+Caused by: jakarta.enterprise.inject.UnsatisfiedResolutionException: Unsatisfied dependency for type com.mongodb.reactivestreams.client.MongoClient and qualifiers [@Default]
+	- java member: com.example.health.MongoHealthCheck#mongoClient
+	- declared on CLASS bean [types=[com.example.health.MongoHealthCheck, org.eclipse.microprofile.health.HealthCheck, java.lang.Object], qualifiers=[@Any, @Readiness], target=com.example.health.MongoHealthCheck]
+	at io.quarkus.arc.processor.Beans.resolveInjectionPoint(Beans.java:478)
+	at io.quarkus.arc.processor.BeanInfo.init(BeanInfo.java:624)
+	at io.quarkus.arc.processor.BeanDeployment.init(BeanDeployment.java:299)
+	... 11 more
+
+	at io.quarkus.builder.Execution.run(Execution.java:123)
+	at io.quarkus.builder.BuildExecutionBuilder.execute(BuildExecutionBuilder.java:79)
+	at io.quarkus.deployment.QuarkusAugmentor.run(QuarkusAugmentor.java:160)
+	at io.quarkus.runner.bootstrap.AugmentActionImpl.runAugment(AugmentActionImpl.java:330)
+	... 6 more
+Caused by: jakarta.enterprise.inject.spi.DeploymentException: jakarta.enterprise.inject.UnsatisfiedResolutionException: Unsatisfied dependency for type com.mongodb.reactivestreams.client.MongoClient and qualifiers [@Default]
+	- java member: com.example.health.MongoHealthCheck#mongoClient
+	- declared on CLASS bean [types=[com.example.health.MongoHealthCheck, org.eclipse.microprofile.health.HealthCheck, java.lang.Object], qualifiers=[@Any, @Readiness], target=com.example.health.MongoHealthCheck]
+	at io.quarkus.arc.processor.BeanDeployment.processErrors(BeanDeployment.java:1453)
+	at io.quarkus.arc.processor.BeanDeployment.init(BeanDeployment.java:311)
+	at io.quarkus.arc.processor.BeanProcessor.initialize(BeanProcessor.java:160)
+	at io.quarkus.arc.deployment.ArcProcessor.validate(ArcProcessor.java:472)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at io.quarkus.deployment.ExtensionLoader$3.execute(ExtensionLoader.java:849)
+	at io.quarkus.builder.BuildContext.run(BuildContext.java:256)
+	at org.jboss.threads.ContextHandler$1.runWith(ContextHandler.java:18)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2513)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1538)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:501)
+Caused by: jakarta.enterprise.inject.UnsatisfiedResolutionException: Unsatisfied dependency for type com.mongodb.reactivestreams.client.MongoClient and qualifiers [@Default]
+	- java member: com.example.health.MongoHealthCheck#mongoClient
+	- declared on CLASS bean [types=[com.example.health.MongoHealthCheck, org.eclipse.microprofile.health.HealthCheck, java.lang.Object], qualifiers=[@Any, @Readiness], target=com.example.health.MongoHealthCheck]
+	at io.quarkus.arc.processor.Beans.resolveInjectionPoint(Beans.java:478)
+	at io.quarkus.arc.processor.BeanInfo.init(BeanInfo.java:624)
+	at io.quarkus.arc.processor.BeanDeployment.init(BeanDeployment.java:299)
+	... 10 more
+

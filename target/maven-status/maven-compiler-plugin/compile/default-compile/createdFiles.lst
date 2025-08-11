@@ -1,3 +1,9 @@
+com\example\controller\UsuarioController$ErrorResponse.class
+com\example\controller\UsuarioController$CountResponse.class
+com\example\health\MongoHealthCheck$1.class
+com\example\health\MongoHealthCheck.class
+com\example\controller\UsuarioController.class
+com\example\controller\UsuarioController$SuccessResponse.class
 com\example\model\Usuario.class
 com\example\service\UsuarioService.class
 com\example\repository\UsuarioRepository.class
